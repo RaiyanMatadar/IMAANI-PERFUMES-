@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imaani Perfumes</title>
+
+  <!-- icons -->
+  <link rel="stylesheet" href="fonts/remixicon.css">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <!-- Css  -->
+   <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-light bg-body-tertiary">
+    <div class="container-fluid position-relative d-flex align-items-center">
+
+      <!-- Desktop left logo -->
+      <a class="navbar-brand d-none d-md-block me-3" href="#">
+        <img src="Images/logo.png" alt="Imaani Logo">
+      </a>
+
+      <!-- Desktop nav (center) -->
+      <ul class="navbar-nav d-none d-md-flex flex-row gap-4 ms-auto align-items-center desktop-only">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+
+        <li class="nav-item dropdown position-relative">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+          <ul class="dropdown-menu position-absolute">
+            <li><a class="dropdown-item" href="#">70ml</a></li>
+            <li><a class="dropdown-item" href="#">50ml</a></li>
+            <li><a class="dropdown-item" href="#">30ml</a></li>
+            <li><a class="dropdown-item" href="#">Attar</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#">Wholesale</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+
+      <!-- AUTH buttons (desktop only, right side) -->
+      <div class="auth-buttons d-none d-md-flex gap-2 desktop-only ms-auto">
+        <a href="#" class="btn btn-outline-dark px-4">Login</a>
+        <a href="#" class="btn btn-dark px-4">Sign Up</a>
+      </div>
+
+      <!-- Centered logo for mobile -->
+      <a class="navbar-brand brand-mobile d-md-none" href="#">
+        <img src="Images/logo.png" alt="Imaani Logo">
+      </a>
+
+      <!-- Mobile toggle on RIGHT -->
+      <button class="btn d-md-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <i class="ri-menu-line" style="font-size:24px;"></i>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="top-search border-top py-2">
+    <div class="container-fluid">
+      <form class="d-flex">
+        <input type="search" placeholder="Search perfumes..." class="form-control me-2" />
+        <button type="submit" class="btn btn-dark"><i class="ri-search-line"></i></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- OFFCANVAS MENU (MOBILE) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header">
+    <h5 id="mobileMenuLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+
+      <!-- mobile dropdown (bootstrap handles toggle) -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">70ml</a></li>
+          <li><a class="dropdown-item" href="#">50ml</a></li>
+          <li><a class="dropdown-item" href="#">30ml</a></li>
+          <li><a class="dropdown-item" href="#">Attar</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a class="nav-link" href="#">Wholesale</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+
+      <li><hr class="dropdown-divider"></li>
+
+      <!-- Put auth links inside mobile menu -->
+      <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+      <li class="nav-item"><a class="nav-link fw-bold" href="#">Sign Up</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- bootstrap JS -->
+<script src="JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>

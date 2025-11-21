@@ -1,0 +1,64 @@
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+a {
+    text-decoration:none; 
+    display:inline-block 
+}
+
+li { 
+    list-style:none; 
+}
+
+/* navbar basics */
+header{ 
+    position:relative; 
+    z-index:999 
+}
+
+.navbar { 
+    min-height:64px; 
+    padding-top:0.25rem; 
+    padding-bottom:0.25rem; 
+}
+
+.navbar-brand img{ 
+    height:45px; 
+}
+
+/* Center mobile logo */
+.brand-mobile {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* Desktop dropdown on hover (only >= md) */
+@media (min-width:768px){
+  .navbar .dropdown:hover .dropdown-menu{ display:block; margin-top:0 }
+  .navbar .dropdown-menu{ display:none }
+}
+
+/* Auth buttons look */
+.auth-buttons .btn {
+  border-radius:8px;
+  font-weight:600;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.auth-buttons .btn:hover{ 
+    transform:translateY(-3px) 
+}
+
+/* Make sure offcanvas items use full width inside */
+.offcanvas .navbar-nav .nav-link { 
+    padding: .5rem 0; 
+}
+
+/* Avoid overlap on very small screens by hiding desktop-only elements */
+@media (max-width:767.98px){
+  .desktop-only { display:none !important; }
+}
