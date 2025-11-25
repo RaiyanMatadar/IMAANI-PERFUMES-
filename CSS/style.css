@@ -195,8 +195,3 @@ body {
   border-color: var(--gold-500) !important;
   color: white !important;
 }
-
-/* Offcanvas */
-.offcanvas {
-  max-width: 80%;
-}
