@@ -43,7 +43,8 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--gold-500);
 }
 
@@ -64,9 +65,9 @@ body {
 /* Dropdown on Hover for Desktop */
 @media (min-width: 992px) {
   .dropdown.group-hover:hover .dropdown-menu {
-      display: block;
-      margin-top: 0;
-      animation: fadeIn 0.3s ease;
+    display: block;
+    margin-top: 0;
+    animation: fadeIn 0.3s ease;
   }
 }
 
@@ -82,12 +83,12 @@ body {
 
 /* Hero Carousel */
 #heroCarousel {
-  height: 90vh; /* Taller hero */
+  height: 90vh;
 }
 
 @media (max-width: 768px) {
   #heroCarousel {
-      height: 60vh;
+    height: 60vh;
   }
 }
 
@@ -107,12 +108,12 @@ body {
 
 @keyframes slideUpFade {
   from {
-      opacity: 0;
-      transform: translateY(40px);
+    opacity: 0;
+    transform: translateY(40px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
