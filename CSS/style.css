@@ -195,3 +195,8 @@ body {
   border-color: var(--gold-500) !important;
   color: white !important;
 }
+
+/* Optional: Smooth transition for the search bar */
+.search-collapse {
+  transition: all 0.3s ease;
+}

@@ -26,49 +26,50 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top bg-white transition-all" id="mainNav">
-      <div class="container-xl px-4 px-lg-5">
-        <!-- Mobile Menu Toggle -->
-        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-          <i class="ri-menu-line fs-4"></i>
-        </button>
+    <!-- Added 'position-relative' to mainNav to anchor the search bar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom position-relative" id="mainNav">
+      <!-- Changed container-xl to container-fluid for better edge handling, adjusted padding -->
+      <div class="container-fluid px-3 px-lg-5">
 
-        <!-- Logo -->
-        <a class="navbar-brand mx-auto mx-lg-0 d-flex align-items-center" href="#">
-          <img src="Images/logo.png" class="me-1" alt="Imaani" height="30px" class="d-inline-block align-text-top">
-          <div class="d-none d-sm-block logo-text font-serif fw-bold text-uppercase tracking-widest">Imaani</div>
+        <!-- 1. Mobile Menu Toggle (Left) -->
+        <!-- We use d-flex and specific widths to ensure the logo stays centered -->
+        <div class="d-flex d-lg-none" style="width: 110px;">
+          <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
+            <i class="ri-menu-line fs-4"></i>
+          </button>
+        </div>
+
+        <!-- 2. Logo (Center) -->
+        <a class="navbar-brand mx-auto d-flex align-items-center justify-content-center" href="#">
+          <!-- Fixed: Removed duplicate 'class' attribute -->
+          <img src="Images/logo.png" class="me-2 d-inline-block align-text-top" alt="Imaani" height="28px">
+          <div class="d-none d-sm-block logo-text font-serif fw-bold text-uppercase tracking-widest fs-5">Imaani</div>
         </a>
 
-        <!-- Icons (Mobile Right) -->
-        <div class="d-flex d-lg-none gap-2">
-          <!-- Wrapper to keep search bar aligned with icon -->
-          <div class="position-relative d-inline-block">
+        <!-- 3. Icons (Mobile Right) -->
+        <!-- justify-content-end ensures icons stick to the right -->
+        <div class="d-flex d-lg-none align-items-center justify-content-end gap-1" style="width: 110px;">
 
-            <a class="nav-link nav-icon cursor-pointer" data-bs-toggle="collapse" href="#searchCollapse" role="button"
-              aria-expanded="false" aria-controls="searchCollapse">
-              <i class="ri-search-line fs-5"></i>
-            </a>
+          <!-- Search Toggler -->
+          <a class="nav-link nav-icon cursor-pointer" data-bs-toggle="collapse" href="#mobileSearchBar" role="button"
+            aria-expanded="false" aria-controls="mobileSearchBar">
+            <i class="ri-search-line fs-5"></i>
+          </a>
 
-            <!-- 2. The Collapsible Search Bar (Content) -->
-            <!-- 'position-absolute' makes it float over content without pushing navbar items -->
-            <div class="collapse position-absolute end-0 mt-4" id="searchCollapse" style="width: 250px; z-index: 1000;">
-              <input type="text" class="form-control shadow" placeholder="Search products...">
-            </div>
-          </div>
+          <!-- User Icon -->
+          <a href="#" class="nav-link nav-icon"><i class="ri-user-line fs-5"></i></a>
 
-          <a href="#" class="nav-link nav-icon "><i class="ri-user-line fs-5"></i></a>
-
-          <a href="#" class="nav-link text-dark position-relative">
+          <!-- Cart Icon -->
+          <a href="#" class="nav-link nav-icon position-relative">
             <i class="ri-shopping-bag-line fs-5"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-black text-white"
-              style="font-size: 0.6rem;">3</span>
+              style="font-size: 0.5rem;">3</span>
           </a>
         </div>
 
-        <!-- Desktop Menu -->
+        <!-- 4. Desktop Menu (Center) -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
           <ul class="navbar-nav mb-2 mb-lg-0 gap-4">
             <li class="nav-item">
@@ -102,19 +103,176 @@
           </ul>
         </div>
 
-        <!-- Desktop Icons -->
+        <!-- 5. Desktop Icons (Right) -->
         <div class="d-none d-lg-flex align-items-center gap-3">
-          <a href="#" class="nav-link nav-icon "><i class="ri-search-line fs-5"></i></a>
-          <a href="#" class="nav-link nav-icon "><i class="ri-user-line fs-5"></i></a>
+          <!-- Desktop Search Trigger (Can reuse mobile bar or separate one) -->
+          <a class="nav-link nav-icon" data-bs-toggle="collapse" href="#mobileSearchBar" role="button"><i
+              class="ri-search-line fs-5"></i></a>
+          <a href="#" class="nav-link nav-icon"><i class="ri-user-line fs-5"></i></a>
           <a href="#" class="nav-link nav-icon position-relative">
             <i class="ri-shopping-bag-line fs-5 position-relative"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-black text-white"
               style="font-size: 0.6rem;">3</span>
           </a>
         </div>
+
       </div>
+
+      <!-- IMPROVED SEARCH BAR (Full Width) -->
+      <!-- Placed directly inside <nav> but outside container so it spans full width -->
+      <div class="collapse w-100 position-absolute top-100 start-0 z-3 shadow-sm" id="mobileSearchBar">
+        <div class="bg-white p-3 border-top">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="ri-search-line text-muted"></i></span>
+            <input type="text" class="form-control border-start-0 ps-0" placeholder="Search products..."
+              aria-label="Search">
+            <button class="btn btn-close ms-2" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mobileSearchBar"></button>
+          </div>
+        </div>
+      </div>
+
     </nav>
   </header>
+
+  
+  <!-- Login Form  -->
+  <button type="button" class="btn btn-danger btn-lg shadow" data-bs-toggle="modal" data-bs-target="#loginModal">
+    Open Login Modal
+  </button>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-3">
+        <div class="modal-body p-4">
+
+          <!-- Header -->
+          <h1 class="fw-bolder mb-4 display-6 text-center text-black">Login</h1>
+
+          <form>
+            <!-- Email Field -->
+            <div class="mb-4">
+              <label class="fw-semibold small mb-1">Email</label>
+              <div class="input-group">
+                <span class="input-group-text pe-3">
+                  <i class="ri-mail-ai-line"></i>
+                </span>
+                <input type="email" class="form-control" placeholder="Type your email">
+              </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-4">
+              <label class="fw-semibold small mb-1">Password</label>
+              <div class="input-group">
+                <span class="input-group-text pe-3">
+                  <i class="ri-lock-fill"></i>
+                </span>
+                <input type="password" class="form-control" placeholder="Type your password" id="passwordInput">
+                <!-- <span class="input-group-text cursor-pointer" style="cursor: pointer;" onclick="togglePassword()">
+                  <i class="bi bi-eye-slash-fill text-muted" id="toggleIcon"></i>
+                </span> -->
+              </div>
+            </div>
+
+            <!-- Options Row -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="small text-secondary" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="text-secondary small text-decoration-none">Forgot password?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit"
+              class="btn btn-danger w-100 py-2 rounded-3 fw-bold text-uppercase text-bg-secondary border-0 shadow-sm mb-4">
+              Login
+            </button>
+
+            <!-- Footer -->
+            <div class="text-center small fw-semibold">
+              <span class="text-secondary">Don't have an account ? </span>
+              <a href="#" class="text-secondary text-decoration-none border-bottom border-secondary">Sign Up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Form-->
+<button type="button" class="btn btn-danger btn-lg shadow" data-bs-toggle="modal" data-bs-target="#signupModal">
+  Open Sign Up Modal
+</button>
+
+<div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-3">
+      <div class="modal-body p-4">
+
+        <!-- Header -->
+        <h1 class="fw-bolder mb-4 display-6 text-center text-black">Sign Up</h1>
+
+        <form>
+          <!-- Full Name Field -->
+          <div class="mb-4">
+            <label class="fw-semibold small mb-1">Full Name</label>
+            <div class="input-group">
+              <span class="input-group-text pe-3">
+                <i class="ri-user-fill"></i>
+              </span>
+              <input type="text" class="form-control" placeholder="Type your full name">
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="mb-4">
+            <label class="fw-semibold small mb-1">Email</label>
+            <div class="input-group">
+              <span class="input-group-text pe-3">
+                <i class="ri-mail-ai-line"></i>
+              </span>
+              <input type="email" class="form-control" placeholder="Type your email">
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="mb-4">
+            <label class="fw-semibold small mb-1">Password</label>
+            <div class="input-group">
+              <span class="input-group-text pe-3">
+                <i class="ri-lock-fill"></i>
+              </span>
+              <input type="password" class="form-control" placeholder="Create a password">
+            </div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="termsCheck">
+            <label class="small text-secondary" for="termsCheck">
+              I agree to the <a href="#" class="text-secondary fw-bold text-decoration-none">Terms & Conditions</a>
+            </label>
+          </div>
+
+          <!-- Sign Up Button -->
+          <button type="submit" class="btn btn-secondary w-100 py-2 rounded-3 fw-bold text-uppercase border-0 shadow-sm mb-4">
+            Sign Up
+          </button>
+
+          <!-- Footer -->
+          <div class="text-center small fw-semibold">
+            <span class="text-secondary">Already have an account? </span>
+            <a href="#" class="text-secondary text-decoration-none border-bottom border-secondary">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Mobile Offcanvas (Menu) -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
@@ -396,8 +554,8 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="JS/bootstrap.bundle.min.js"></script>
-  
   <!-- Navbar Scroll Script -->
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const navbar = document.getElementById('mainNav');
@@ -413,6 +571,19 @@
       window.addEventListener('scroll', updateNavbar);
       updateNavbar(); // Check on load
     });
+
+    // Login form JS Script 
+    function togglePassword() {
+      const passwordInput = document.getElementById('passwordInput');
+      const toggleIcon = document.getElementById('toggleIcon');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.replace('bi-eye-slash-fill', 'bi-eye-fill');
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+      }
+    }
   </script>
 </body>
 
